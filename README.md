@@ -10,7 +10,7 @@
 
 | 이론 | 역할 |
 |:---|:---|
-| **HRO (High Reliability Organizations)** | 내부 안전관리 변수군(정리정돈·위험성평가·작업중지권·위원회·안전조직)의 이론적 정당성 — Weick, Sutcliffe & Obstfeld (1999) |
+| **HRO (High Reliability Organizations)** | 내부 안전관리 변수군의 배경 이론 참조 — Weick & Sutcliffe (1999) |
 | **Swiss Cheese Model** | 외부감독 변수의 이론적 위치 및 인증×감독 상호작용항(OR=2.081) 양(+)부호의 선택편향 방어 — Reason (1990, 2000) |
 | **사고인과연쇄이론** | 건설안전 도메인 이론적 배경 — Heinrich (1931), Bird (1974) |
 
