@@ -27,8 +27,9 @@
 | Phase | 내용 | 방법 |
 |:---:|:---|:---|
 | 1 | 탐색적 데이터 분석 (EDA) | 기술통계, 단변량 분석(변수별 사고발생률), VIF, 상관관계 히트맵 |
-| 2 | 계층적 로지스틱 회귀 | statsmodels Logit, ΔR² 우도비 검정, 조절효과 시각화 |
-| 2+ | LR 타당성 검증 | Hosmer-Lemeshow 검정 |
+| 2 | 조절효과 분석 (Moderation Analysis) | 개별 상호작용 검정 24쌍 (8독립 × 3조절) + 그룹별 LR test + p-value 히트맵 |
+| 2+ | LR 타당성 검증 | Hosmer-Lemeshow 검정 (Baseline 모형, p=0.2017) |
+| 부록 A | 계층적 회귀 보조 분석 | statsmodels Logit M1~M5, ΔR² 우도비 검정 (참고용) |
 | 3 | 머신러닝 모델 비교 | RF / XGBoost / LightGBM + SMOTENC + 5-Fold CV |
 | 3+ | ML 타당성 검증 | Bootstrap 95% CI, Calibration Curve, Ablation Study |
 | 4 | SHAP 분석 | TreeExplainer, Summary/Bar/Dependence Plot, LR-SHAP 교차검증 |
@@ -39,7 +40,7 @@
 
 - **독립변수**: 정리정돈상태(OR=0.792, p=0.031) — SHAP·PI 삼중 교차검증으로 보호 효과 경향 지지
 - **통제변수**: 공사규모, 기성공정률, 공사종류, 외국인비율이 사고발생에 가장 강한 영향
-- **조절효과**: 인증보유 × 고용노동부감독 상호작용항 유의미(OR=2.081, p=0.022) — Swiss Cheese Model 기반 선택편향으로 해석
+- **조절효과**: 24쌍 개별 검정 중 1쌍 유의 — 인증보유 × 고용노동부감독(OR=1.811, 95%CI=[1.044, 3.141], p=0.034) — Swiss Cheese Model 기반 선택편향으로 해석
 - **최적 ML 모델**: Random Forest — F1=0.545 (95% CI: 0.462–0.626), ROC-AUC=0.717, PR-AUC=0.460
 - **Calibration**: Brier Score=0.2101, ECE=0.1649 — discrimination(AUC) 견고, 절대확률 보정 여지 있음 (Van Calster et al., 2019); 위험 순위(risk ranking) 활용 권장
 - **SMOTENC 방법론적 기여**: Ablation Study에서 class_weight 대비 Recall 5.7%p 추가 향상 확인
