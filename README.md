@@ -41,8 +41,9 @@
 - **통제변수**: 공사규모, 기성공정률, 공사종류, 외국인비율이 사고발생에 가장 강한 영향
 - **조절효과**: 인증보유 × 고용노동부감독 상호작용항 유의미(OR=2.081, p=0.022) — Swiss Cheese Model 기반 선택편향으로 해석
 - **최적 ML 모델**: Random Forest — F1=0.545 (95% CI: 0.462–0.626), ROC-AUC=0.717, PR-AUC=0.460
+- **Calibration**: Brier Score=0.2101, ECE=0.1649 — discrimination(AUC) 견고, 절대확률 보정 여지 있음 (Van Calster et al., 2019); 위험 순위(risk ranking) 활용 권장
 - **SMOTENC 방법론적 기여**: Ablation Study에서 class_weight 대비 Recall 5.7%p 추가 향상 확인
-- **LR 모형 적합**: Hosmer-Lemeshow p=0.2017 — Model 4 적합도 검증 통과
+- **LR 모형 적합**: Hosmer-Lemeshow p=0.2017 — Model 4 Pseudo R²=0.1044 (허용 범위 0.05–0.15 내)
 - **SHAP Top-3**: 기성공정률 > 외국인비율 > 공사종류
 - **강건성**: 공사규모별(소·중·대) 및 공사종류별(토목·건축·플랜트) 전 6개 하위표본에서 정리정돈상태 OR<1 방향 일관 확인 (데이터 삼각검증)
 
