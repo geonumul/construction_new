@@ -39,12 +39,12 @@
 
 - **독립변수**: 정리정돈상태(OR=0.792, p=0.031) — SHAP·PI 삼중 교차검증으로 보호 효과 경향 지지
 - **통제변수**: 공사규모, 기성공정률, 공사종류, 외국인비율이 사고발생에 가장 강한 영향
-- **조절효과**: Model 2 (24쌍 동시 투입) 중 1쌍 유의 — 인증보유 × 고용노동부감독(OR=2.081, p=0.022) — Swiss Cheese Model 기반 선택편향으로 해석
-- **최적 ML 모델**: Random Forest — F1=0.545 (95% CI: 0.462–0.628), ROC-AUC=0.717 (95% CI: 0.655–0.786), PR-AUC=0.460
+- **조절효과**: Model 2 (24쌍 동시 투입) 중 1쌍 유의 — 인증보유 × 고용노동부감독(OR=2.082, p=0.019) — Swiss Cheese Model 기반 선택편향으로 해석
+- **최적 ML 모델**: Random Forest — F1=0.535 (95% CI: 0.438–0.614), ROC-AUC=0.718 (95% CI: 0.654–0.783), PR-AUC=0.460
 - **Calibration**: Calibration Curve 기반 위험 순위(risk ranking) 활용 권장; AUC=0.717 변별력 견고
-- **SMOTENC 방법론적 기여**: Ablation Study에서 class_weight 대비 Recall 3.8%p 추가 향상 확인
-- **LR 모형 적합**: Hosmer-Lemeshow p=0.2017 (Model 1, stat=10.999, df=8) — Model 1 Pseudo R²=0.1044 (허용 범위 0.05–0.15 내)
-- **SHAP Top-3**: 기성공정률 > 외국인비율 > 공사종류
+- **SMOTENC 방법론적 기여**: Ablation Study에서 Baseline 대비 F1 +81%, Recall +231% 향상 확인; SMOTENC + class_weight = SMOTENC 단독 (완전한 불균형 해소)
+- **LR 모형 적합**: Hosmer-Lemeshow p=0.1875 (Model 1, stat=11.258, df=8) — Model 1 Pseudo R²=0.1046 (허용 범위 0.05–0.15 내)
+- **SHAP Top-5**: 기성공정률 > 외국인비율 > 공사종류 > 공사규모 > 안전보건공단지원
 - **강건성**: 공사규모별(소·중·대) 및 공사종류별(토목·건축·플랜트) 전 6개 하위표본에서 정리정돈상태 OR<1 방향 일관 확인 (데이터 삼각검증)
 
 ## Triangulation 강건성 체계
