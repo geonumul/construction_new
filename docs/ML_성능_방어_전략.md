@@ -14,7 +14,7 @@ F1=0.545, AUC=0.717의 성능을 방어할 때 떠올릴 체크리스트. 저널
    → 설문 자기보고·단면·1,375건·17변수 한계를 Phase 3 도입부와 한계 섹션 양쪽에 명시
 
 4. **방법론적 기여·혁신을 부각**
-   → SMOTENC Ablation, LR+ML+SHAP 병행, HRO·Swiss Cheese 이론 연결
+   → SMOTENC Ablation, LR+ML+SHAP 병행, Swiss Cheese Model 이론 연결
 
 5. **해석(SHAP)에서 나오는 통찰이 진짜 가치**
    → SHAP Top-3 통제변수 발견, 정리정돈 보호효과, 인증×감독 선택편향
