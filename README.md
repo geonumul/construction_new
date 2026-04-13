@@ -31,7 +31,7 @@
 | 3+ | ML 타당성 검증 | Bootstrap 95% CI, Calibration Curve, Ablation Study |
 | 4 | SHAP 분석 | TreeExplainer, Summary/Bar/Dependence Plot, LR-SHAP 교차검증 |
 | 4+ | 변수중요도 삼중검증 | SHAP × Permutation Importance × LR p-value |
-| **5** | **Triangulation 기반 강건성 검증** | **공사규모별·공사종류별 Subsample Robustness (데이터 삼각검증)** |
+| **5** | **다층 교차 검증 기반 강건성 검증** | **공사규모별·공사종류별 Subsample Robustness (하위표본 간 일관성 검증)** |
 
 ## 주요 결과
 
@@ -43,15 +43,15 @@
 - **SMOTENC 방법론적 기여**: Ablation Study에서 Baseline 대비 F1 +81%, Recall +231% 향상 확인; SMOTENC + class_weight = SMOTENC 단독 (완전한 불균형 해소)
 - **LR 모형 적합**: Hosmer-Lemeshow p=0.272 (Model 1, stat=9.902, df=8) — Model 1 Pseudo R²=0.0927 (허용 범위 0.05–0.15 내)
 - **SHAP Top-5**: 기성공정률 > 외국인비율 > 공사종류 > 공사규모 > 안전보건공단지원
-- **강건성**: 공사규모별(소·중·대) 및 공사종류별(토목·건축·플랜트) 전 6개 하위표본에서 정리정돈상태 OR<1 방향 일관 확인 (데이터 삼각검증)
+- **강건성**: 공사규모별(소·중·대) 및 공사종류별(토목·건축·플랜트) 전 6개 하위표본에서 정리정돈상태 OR<1 방향 일관 확인 (하위표본 간 일관성 검증)
 
-## Triangulation 강건성 체계
+## 다층 교차 검증 강건성 체계
 
-| 삼각검증 유형 | 장치 | 수렴하는 결론 |
+| 교차 검증 유형 | 장치 | 수렴하는 결론 |
 |:---|:---|:---|
-| 방법론 삼각검증 | LR(추론) + ML(예측) + SHAP(해석) | 통제변수 지배, 정리정돈 보호 방향 |
-| 데이터 삼각검증 | 공사규모별·공사종류별 분할분석 | 전 하위표본에서 핵심 계수 방향 일관 |
-| 지표 삼각검증 | SHAP × PI × LR p-value | 정리정돈 보호 효과 삼중 확인 |
+| 방법론 간 결론 수렴 검증 | LR(추론) + ML(예측) + SHAP(해석) | 통제변수 지배, 정리정돈 보호 방향 |
+| 하위표본 간 결과 일관성 검증 | 공사규모별·공사종류별 분할분석 | 전 하위표본에서 핵심 계수 방향 일관 |
+| 중요도 지표 간 일관성 검증 | SHAP × PI × LR p-value | 정리정돈 보호 효과 삼중 확인 |
 
 ## 파일 구조
 
