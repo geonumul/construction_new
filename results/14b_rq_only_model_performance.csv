@@ -1,0 +1,6 @@
+﻿,Full Model (기존),Subset Model (신규)
+Accuracy,0.6655,0.6109
+Precision,0.4417,0.384
+Recall,0.6795,0.6154
+F1,0.5354,0.4729
+AUC,0.7174,0.6554
